@@ -139,7 +139,7 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
-  border: 1px solid rgba(255, 45, 141, 0.35);
+  border: 1px solid rgba(240, 200, 80, 0.35);
   padding: 8px 20px;
   border-radius: 100px;
   margin-bottom: 32px;
@@ -152,7 +152,7 @@ body {
   letter-spacing: -0.04em;
   line-height: 1;
   margin-bottom: 24px;
-  background: linear-gradient(135deg, #f5f5f5 0%, #f5f5f5 40%, #FF2D8D 100%);
+  background: linear-gradient(135deg, #f5f5f5 0%, #f5f5f5 40%, #F0C850 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -173,7 +173,7 @@ body {
   width: 700px;
   height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 45, 141, 0.08) 0%, rgba(106, 0, 244, 0.06) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(232, 69, 60, 0.08) 0%, rgba(46, 184, 168, 0.06) 40%, transparent 70%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -284,7 +284,7 @@ body {
 }
 
 .what-card:hover {
-  border-color: rgba(209, 0, 108, 0.35);
+  border-color: rgba(232, 69, 60, 0.35);
 }
 
 .what-icon {
@@ -364,7 +364,7 @@ body {
 }
 
 .benefit-card:hover {
-  border-color: rgba(209, 0, 108, 0.35);
+  border-color: rgba(232, 69, 60, 0.35);
 }
 
 .benefit-tag {
@@ -374,7 +374,7 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
-  background: rgba(255, 45, 141, 0.1);
+  background: rgba(240, 200, 80, 0.1);
   padding: 6px 14px;
   border-radius: 100px;
   margin-bottom: 20px;
@@ -445,7 +445,7 @@ body {
   width: 800px;
   height: 800px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(106, 0, 244, 0.06) 0%, rgba(255, 45, 141, 0.04) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(46, 184, 168, 0.06) 0%, rgba(232, 69, 60, 0.04) 40%, transparent 70%);
   bottom: -400px;
   left: 50%;
   transform: translateX(-50%);
