@@ -10,7 +10,9 @@
     var elements = document.querySelectorAll(
       '.what-card, .step, .benefit-card, .proof-item, ' +
       '.section-label, .section h2, .section-body, ' +
-      '.vision-body, .waitlist-inner'
+      '.vision-body, .waitlist-inner, ' +
+      '.narrative-lead, .narrative-body, .narrative-emphasis, ' +
+      '.narrative-lines, .narrative-closing'
     );
 
     elements.forEach(function (el) {
