@@ -15,9 +15,12 @@
   --bg-card: #161616;
   --border: #222222;
   --text: #f5f5f5;
-  --text-muted: #888888;
-  --accent: #c8ff00;
-  --accent-dim: #a8d600;
+  --text-muted: #999999;
+  --accent: #ff6b35;
+  --accent-secondary: #e63946;
+  --accent-tertiary: #7b2d8e;
+  --gradient: linear-gradient(135deg, #7b2d8e, #e63946, #ff6b35, #ffa500);
+  --gradient-subtle: linear-gradient(135deg, rgba(123, 45, 142, 0.15), rgba(230, 57, 70, 0.15), rgba(255, 107, 53, 0.15));
   --radius: 12px;
   --radius-sm: 8px;
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -70,17 +73,29 @@ body {
   letter-spacing: -0.03em;
   color: var(--text);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
 }
 
 .logo span {
-  color: var(--accent);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .nav-cta {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--bg);
-  background: var(--accent);
+  color: #fff;
+  background: var(--gradient);
   padding: 10px 20px;
   border-radius: 100px;
   text-decoration: none;
@@ -109,6 +124,14 @@ body {
   max-width: 720px;
 }
 
+.hero-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 18px;
+  margin-bottom: 32px;
+  animation: fadeInUp 0.6s ease both;
+}
+
 .badge {
   display: inline-block;
   font-size: 0.8rem;
@@ -116,11 +139,11 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
-  border: 1px solid rgba(200, 255, 0, 0.3);
+  border: 1px solid rgba(255, 107, 53, 0.35);
   padding: 8px 20px;
   border-radius: 100px;
   margin-bottom: 32px;
-  animation: fadeInUp 0.6s ease both;
+  animation: fadeInUp 0.6s ease 0.05s both;
 }
 
 .hero h1 {
@@ -129,6 +152,10 @@ body {
   letter-spacing: -0.04em;
   line-height: 1;
   margin-bottom: 24px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #f5f5f5 40%, #ff6b35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   animation: fadeInUp 0.6s ease 0.1s both;
 }
 
@@ -143,10 +170,10 @@ body {
 
 .hero-glow {
   position: absolute;
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(200, 255, 0, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(230, 57, 70, 0.08) 0%, rgba(123, 45, 142, 0.05) 40%, transparent 70%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -181,7 +208,7 @@ body {
 }
 
 .email-form input[type="email"]:focus {
-  border-color: var(--accent);
+  border-color: var(--accent-secondary);
 }
 
 .email-form button {
@@ -189,8 +216,8 @@ body {
   font-size: 1rem;
   font-weight: 700;
   font-family: var(--font);
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--gradient);
+  color: #fff;
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
@@ -257,11 +284,11 @@ body {
 }
 
 .what-card:hover {
-  border-color: rgba(200, 255, 0, 0.3);
+  border-color: rgba(230, 57, 70, 0.35);
 }
 
 .what-icon {
-  color: var(--accent);
+  color: var(--accent-secondary);
   margin-bottom: 20px;
 }
 
@@ -298,7 +325,11 @@ body {
 .step-num {
   font-size: 3rem;
   font-weight: 900;
-  color: rgba(200, 255, 0, 0.15);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.25;
   letter-spacing: -0.04em;
   line-height: 1;
   margin-bottom: 16px;
@@ -333,7 +364,7 @@ body {
 }
 
 .benefit-card:hover {
-  border-color: rgba(200, 255, 0, 0.3);
+  border-color: rgba(230, 57, 70, 0.35);
 }
 
 .benefit-tag {
@@ -343,7 +374,7 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
-  background: rgba(200, 255, 0, 0.08);
+  background: rgba(255, 107, 53, 0.1);
   padding: 6px 14px;
   border-radius: 100px;
   margin-bottom: 20px;
@@ -376,7 +407,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--accent-secondary);
 }
 
 /* ---- VISION ---- */
@@ -396,6 +427,10 @@ body {
 .vision-section h2 {
   font-size: clamp(2.2rem, 6vw, 4rem);
   line-height: 1.08;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .vision-body {
@@ -410,7 +445,7 @@ body {
   width: 800px;
   height: 800px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(200, 255, 0, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(123, 45, 142, 0.06) 0%, rgba(255, 107, 53, 0.03) 40%, transparent 70%);
   bottom: -400px;
   left: 50%;
   transform: translateX(-50%);
