@@ -1,22 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <linearGradient id="bg1" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFA500"/>
-      <stop offset="20%" stop-color="#FF5722"/>
-      <stop offset="45%" stop-color="#E6194B"/>
-      <stop offset="70%" stop-color="#9C27B0"/>
-      <stop offset="100%" stop-color="#3A0CA3"/>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2EE6A8"/>
+      <stop offset="25%" stop-color="#20C9B0"/>
+      <stop offset="50%" stop-color="#1DA8D4"/>
+      <stop offset="75%" stop-color="#2B6DDB"/>
+      <stop offset="100%" stop-color="#6A3DE8"/>
     </linearGradient>
-    <radialGradient id="g1" cx="75%" cy="15%" r="45%">
-      <stop offset="0%" stop-color="#FFB74D" stop-opacity="0.5"/>
+    <radialGradient id="g1" cx="25%" cy="15%" r="45%">
+      <stop offset="0%" stop-color="#5DFFC2" stop-opacity="0.4"/>
       <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="g2" cx="25%" cy="85%" r="45%">
-      <stop offset="0%" stop-color="#4A0E8F" stop-opacity="0.55"/>
+    <radialGradient id="g2" cx="75%" cy="85%" r="45%">
+      <stop offset="0%" stop-color="#5535CC" stop-opacity="0.5"/>
       <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="g3" cx="85%" cy="85%" r="35%">
-      <stop offset="0%" stop-color="#E6194B" stop-opacity="0.4"/>
+    <radialGradient id="g3" cx="85%" cy="25%" r="35%">
+      <stop offset="0%" stop-color="#18B4E8" stop-opacity="0.35"/>
       <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
     </radialGradient>
     <clipPath id="clip">
@@ -29,7 +29,7 @@
   </defs>
 
   <g clip-path="url(#clip)">
-    <!-- Galaxy background -->
+    <!-- Galaxy background: teal/mint → cyan → blue → indigo/purple -->
     <rect width="512" height="512" fill="url(#bg1)"/>
     <rect width="512" height="512" fill="url(#g1)"/>
     <rect width="512" height="512" fill="url(#g2)"/>
@@ -62,11 +62,7 @@
       <circle cx="475" cy="165" r="2"/><circle cx="305" cy="45" r="2.2"/>
     </g>
 
-    <!--
-      White M with lightning-bolt left leg.
-      The left leg extends to a very sharp point at bottom-left.
-      The right side is a clean thick vertical bar.
-    -->
+    <!-- White M with lightning-bolt left leg -->
     <path d="
       M 80,455
       L 158,92
