@@ -91,13 +91,19 @@ body {
   margin-left: 0.05em;
 }
 
-.logo span::before {
+.logo i {
+  font-style: normal;
+  position: relative;
+}
+
+.logo i::after {
   content: '';
   position: absolute;
-  top: -0.45em;
-  left: 0.15em;
-  width: 0.45em;
-  height: 0.45em;
+  top: -0.1em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.3em;
+  height: 0.3em;
   background: var(--gradient);
   border-radius: 50%;
 }
