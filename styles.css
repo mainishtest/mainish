@@ -73,30 +73,33 @@ body {
   letter-spacing: -0.03em;
   color: var(--text);
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: inline-flex;
+  align-items: baseline;
   position: relative;
 }
 
-.logo-img {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-}
-
 .logo span {
-  font-size: 0.65em;
+  font-size: 0.55em;
   font-weight: 700;
   letter-spacing: 0.02em;
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  vertical-align: super;
   position: relative;
-  top: -0.35em;
-  margin-left: -0.1em;
+  top: -0.7em;
+  margin-left: 0.05em;
+}
+
+.logo span::before {
+  content: '';
+  position: absolute;
+  top: -0.45em;
+  left: 0.15em;
+  width: 0.45em;
+  height: 0.45em;
+  background: var(--gradient);
+  border-radius: 50%;
 }
 
 .nav-cta {
