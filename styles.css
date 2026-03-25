@@ -29,6 +29,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -132,7 +133,7 @@ body {
   justify-content: center;
   text-align: center;
   padding: 120px 24px 80px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .hero-content {
