@@ -97,18 +97,6 @@ body {
   position: relative;
 }
 
-.logo i::after {
-  content: '';
-  position: absolute;
-  top: 0.0em;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0.3em;
-  height: 0.3em;
-  background: var(--gradient);
-  border-radius: 50%;
-}
-
 .nav-cta {
   font-size: 0.875rem;
   font-weight: 600;
