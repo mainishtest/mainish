@@ -76,6 +76,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
 }
 
 .logo-img {
@@ -85,10 +86,17 @@ body {
 }
 
 .logo span {
+  font-size: 0.65em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  vertical-align: super;
+  position: relative;
+  top: -0.35em;
+  margin-left: -0.1em;
 }
 
 .nav-cta {
