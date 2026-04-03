@@ -43,20 +43,42 @@
 
         var input = form.querySelector('input[type="email"]');
         var email = input.value.trim();
+        var button = form.querySelector('button[type="submit"]');
 
         if (!email) return;
 
-        // Replace form with success message
-        var success = document.createElement('div');
-        success.className = 'form-success';
-        success.innerHTML = '<p>You\'re on the list. We\'ll be in touch.</p>';
-        form.parentNode.replaceChild(success, form);
+        button.disabled = true;
+        button.textContent = 'Submitting...';
 
-        // Remove the form note if present
-        var note = success.nextElementSibling;
-        if (note && note.classList.contains('form-note')) {
-          note.style.display = 'none';
-        }
+        fetch('https://formspree.io/f/mnjoggnd', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ email: email })
+        })
+          .then(function (response) {
+            if (response.ok) {
+              var success = document.createElement('div');
+              success.className = 'form-success';
+              success.innerHTML = '<p>You\'re on the list. We\'ll be in touch.</p>';
+              form.parentNode.replaceChild(success, form);
+
+              var note = success.nextElementSibling;
+              if (note && note.classList.contains('form-note')) {
+                note.style.display = 'none';
+              }
+            } else {
+              button.disabled = false;
+              button.textContent = 'Get Early Access';
+              input.style.borderColor = '#e74c3c';
+              input.placeholder = 'Something went wrong. Try again.';
+            }
+          })
+          .catch(function () {
+            button.disabled = false;
+            button.textContent = 'Get Early Access';
+            input.style.borderColor = '#e74c3c';
+            input.placeholder = 'Something went wrong. Try again.';
+          });
       });
     });
   }
