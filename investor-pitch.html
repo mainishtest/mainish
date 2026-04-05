@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAINish — Investor Pitch: The Future of Online Commerce & Live Shopping</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23F0C850'/%3E%3Cstop offset='50%25' stop-color='%23E8453C'/%3E%3Cstop offset='100%25' stop-color='%232EB8A8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='22' fill='url(%23g)'%3EM%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --bg-raised: #111111;
+      --bg-card: #161616;
+      --border: #222222;
+      --text: #f5f5f5;
+      --text-muted: #999999;
+      --accent: #F0C850;
+      --accent-secondary: #E8453C;
+      --accent-tertiary: #2EB8A8;
+      --gradient: linear-gradient(135deg, #F0C850 0%, #E8453C 50%, #2EB8A8 100%);
+      --gradient-subtle: linear-gradient(135deg, rgba(240, 200, 80, 0.15), rgba(232, 69, 60, 0.15), rgba(46, 184, 168, 0.15));
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,10,0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 32px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.5rem; font-weight: 800; color: var(--text);
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent); color: var(--bg);
+      padding: 10px 24px; border-radius: var(--radius-sm); text-decoration: none;
+      font-weight: 700; font-size: 0.9rem; transition: all 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 160px 32px 100px;
+      text-align: center;
+      background: var(--bg);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -300px; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 900px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(240,200,80,0.07) 0%, rgba(232,69,60,0.04) 40%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -400px; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 800px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(46,184,168,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--bg-raised); border: 1px solid var(--border);
+      padding: 8px 20px; border-radius: 100px; font-size: 0.85rem;
+      font-weight: 600; color: var(--accent); margin-bottom: 28px;
+      position: relative;
+    }
+    .badge::before {
+      content: ''; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent); animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800; line-height: 1.1; letter-spacing: -1.5px;
+      color: var(--text); max-width: 780px; margin: 0 auto 24px;
+      position: relative;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 1.2rem; color: var(--text-muted); max-width: 560px;
+      margin: 0 auto 40px; line-height: 1.7; position: relative;
+    }
+    .event-details {
+      display: inline-flex; flex-wrap: wrap; gap: 12px;
+      justify-content: center; margin-bottom: 48px;
+      position: relative;
+    }
+    .event-tag {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--bg-raised); border: 1px solid var(--border);
+      padding: 12px 20px; border-radius: 10px;
+      font-weight: 600; font-size: 0.95rem; color: var(--text-muted);
+    }
+    .event-tag svg { width: 18px; height: 18px; color: var(--accent); flex-shrink: 0; }
+    .hero-cta {
+      display: inline-block; position: relative;
+      background: var(--accent); color: var(--bg);
+      padding: 16px 40px; border-radius: 10px; text-decoration: none;
+      font-weight: 700; font-size: 1.1rem;
+      box-shadow: 0 4px 24px rgba(240,200,80,0.25);
+      transition: all 0.2s;
+    }
+    .hero-cta:hover {
+      box-shadow: 0 6px 32px rgba(240,200,80,0.35);
+      transform: translateY(-2px);
+    }
+
+    /* ── SECTIONS ── */
+    .section { padding: 100px 32px; max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2px; margin-bottom: 12px;
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800; letter-spacing: -1px; color: var(--text);
+      margin-bottom: 20px; line-height: 1.15;
+    }
+    .section > p {
+      font-size: 1.1rem; color: var(--text-muted); max-width: 640px;
+      margin-bottom: 48px; line-height: 1.7;
+    }
+
+    /* ── STATS ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px; margin-bottom: 48px;
+    }
+    .stat-card {
+      background: var(--bg-card); border-radius: var(--radius);
+      padding: 32px 28px; text-align: center;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+    .stat-card:hover { border-color: var(--accent); }
+    .stat-card .number {
+      font-size: 2.6rem; font-weight: 800;
+      line-height: 1; margin-bottom: 8px; letter-spacing: -1px;
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-card .label {
+      font-size: 0.9rem; color: var(--text-muted); font-weight: 500;
+    }
+
+    /* ── TOPIC CARDS ── */
+    .topics-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .topic-card {
+      padding: 28px; border-radius: var(--radius);
+      border: 1px solid var(--border); background: var(--bg-card);
+      transition: all 0.2s;
+    }
+    .topic-card:hover {
+      border-color: rgba(240,200,80,0.4);
+      box-shadow: 0 4px 20px rgba(240,200,80,0.06);
+    }
+    .topic-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(240,200,80,0.1); display: flex;
+      align-items: center; justify-content: center; margin-bottom: 16px;
+    }
+    .topic-icon svg { width: 22px; height: 22px; color: var(--accent); }
+    .topic-card h3 {
+      font-size: 1.05rem; font-weight: 700; color: var(--text);
+      margin-bottom: 8px;
+    }
+    .topic-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── DIVIDER ── */
+    .gradient-divider {
+      height: 1px; max-width: 1100px; margin: 0 auto;
+      background: var(--gradient); opacity: 0.2;
+    }
+
+    /* ── FORM SECTION ── */
+    .form-section {
+      padding: 100px 32px;
+      background: var(--bg-raised);
+    }
+    .form-wrapper {
+      max-width: 680px; margin: 0 auto;
+      background: var(--bg-card); border-radius: 16px;
+      padding: 48px 40px; border: 1px solid var(--border);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+    }
+    .form-wrapper .section-label { text-align: center; }
+    .form-wrapper h2 { text-align: center; margin-bottom: 8px; }
+    .form-subtitle {
+      text-align: center; font-size: 1rem; color: var(--text-muted);
+      margin-bottom: 36px; line-height: 1.6;
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .form-group label .required { color: var(--accent-secondary); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 16px; border-radius: var(--radius-sm);
+      border: 1px solid var(--border); font-size: 0.95rem;
+      font-family: inherit; color: var(--text);
+      background: var(--bg);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #555555;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none; border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(240,200,80,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-group select {
+      cursor: pointer; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23999999' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 6l3.5 4 3.5-4z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center;
+      padding-right: 36px;
+    }
+    .form-group select option {
+      background: var(--bg-card); color: var(--text);
+    }
+    .submit-btn {
+      margin-top: 28px; width: 100%;
+      background: var(--accent); color: var(--bg);
+      padding: 16px; border: none; border-radius: 10px;
+      font-size: 1.05rem; font-weight: 700; cursor: pointer;
+      font-family: inherit;
+      box-shadow: 0 4px 24px rgba(240,200,80,0.2);
+      transition: all 0.2s;
+    }
+    .submit-btn:hover {
+      box-shadow: 0 6px 32px rgba(240,200,80,0.35);
+      transform: translateY(-1px);
+    }
+    .form-note {
+      text-align: center; font-size: 0.8rem; color: var(--text-muted);
+      margin-top: 16px;
+    }
+
+    /* ── SUCCESS STATE ── */
+    .success-message {
+      display: none; text-align: center; padding: 48px 20px;
+    }
+    .success-message .check-circle {
+      width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 20px;
+      background: rgba(240,200,80,0.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .success-message .check-circle svg { width: 32px; height: 32px; color: var(--accent); }
+    .success-message h3 {
+      font-size: 1.6rem; font-weight: 800; color: var(--text);
+      margin-bottom: 12px;
+    }
+    .success-message p {
+      font-size: 1.05rem; color: var(--text-muted); max-width: 400px;
+      margin: 0 auto; line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center; padding: 48px 32px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem; color: var(--text-muted);
+      background: var(--bg);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 14px 20px; }
+      .hero { padding: 130px 20px 80px; }
+      .section { padding: 72px 20px; }
+      .form-section { padding: 72px 16px; }
+      .form-wrapper { padding: 32px 24px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .event-details { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">MAIN<span>ish</span></div>
+  <a href="#apply" class="nav-cta">Request Your Seat</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">Exclusive Investor Event</div>
+  <h1>The Future of <em>Online Commerce & Live Shopping</em></h1>
+  <p>Join MAINish for an exclusive virtual pitch exploring the massive opportunity in live commerce — the fastest-growing channel in online retail.</p>
+  <div class="event-details">
+    <div class="event-tag">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+      Wednesday, April 8, 2026
+    </div>
+    <div class="event-tag">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      1:00 PM EST
+    </div>
+    <div class="event-tag">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>
+      Virtual — Zoom Link Provided
+    </div>
+  </div>
+  <a href="#apply" class="hero-cta">Apply for Access &rarr;</a>
+</section>
+
+<div class="gradient-divider"></div>
+
+<!-- MARKET OPPORTUNITY -->
+<section class="section">
+  <div class="section-label">The Opportunity</div>
+  <h2>Live commerce is reshaping how people buy online</h2>
+  <p>The convergence of entertainment and e-commerce is unlocking a trillion-dollar shift. Early movers will define the next era of online retail.</p>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="number">$600B+</div>
+      <div class="label">Global live commerce market by 2027</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">10&times;</div>
+      <div class="label">Higher conversion vs. traditional e-commerce</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">35%</div>
+      <div class="label">Year-over-year growth rate</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">70%</div>
+      <div class="label">Of Gen Z prefer video-first shopping</div>
+    </div>
+  </div>
+</section>
+
+<div class="gradient-divider"></div>
+
+<!-- WHAT YOU'LL LEARN -->
+<section class="section">
+  <div class="section-label">What You'll Learn</div>
+  <h2>Inside the pitch</h2>
+  <p>A 45-minute session covering our vision, traction, and the investment opportunity — followed by live Q&A.</p>
+  <div class="topics-grid">
+    <div class="topic-card">
+      <div class="topic-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5"/></svg>
+      </div>
+      <h3>Product Demo</h3>
+      <p>See our live shopping platform in action — real-time engagement, seamless checkout, and creator tools.</p>
+    </div>
+    <div class="topic-card">
+      <div class="topic-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
+      </div>
+      <h3>Traction & Metrics</h3>
+      <p>Our growth trajectory, user engagement data, GMV milestones, and path to profitability.</p>
+    </div>
+    <div class="topic-card">
+      <div class="topic-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h3>The Ask</h3>
+      <p>Round details, use of funds, valuation, and terms. Transparent financials with a clear roadmap.</p>
+    </div>
+    <div class="topic-card">
+      <div class="topic-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/></svg>
+      </div>
+      <h3>Live Q&A</h3>
+      <p>Open floor for questions with the founding team. Nothing off-limits.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="form-section" id="apply">
+  <div class="form-wrapper">
+    <div class="section-label">Limited Seats</div>
+    <h2>Request Your Seat</h2>
+    <p class="form-subtitle">This is an invite-only session. Please answer a few quick questions so we can confirm your spot.</p>
+
+    <form id="investorForm" action="https://formspree.io/f/xzdkkzdr" method="POST">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>First Name <span class="required">*</span></label>
+          <input type="text" name="firstName" required placeholder="Jane">
+        </div>
+        <div class="form-group">
+          <label>Last Name <span class="required">*</span></label>
+          <input type="text" name="lastName" required placeholder="Smith">
+        </div>
+        <div class="form-group full">
+          <label>Email <span class="required">*</span></label>
+          <input type="email" name="email" required placeholder="jane@example.com">
+        </div>
+        <div class="form-group full">
+          <label>Company / Fund Name</label>
+          <input type="text" name="company" placeholder="e.g. Acme Ventures">
+        </div>
+
+        <!-- PRE-QUALIFICATION QUESTIONS -->
+        <div class="form-group full">
+          <label>Are you an accredited investor? <span class="required">*</span></label>
+          <select name="accredited" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="yes">Yes, I am an accredited investor</option>
+            <option value="in_process">I'm in the process of qualifying</option>
+            <option value="no">No, but I'm interested in learning more</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label>What is your typical check size for early-stage investments? <span class="required">*</span></label>
+          <select name="checkSize" required>
+            <option value="" disabled selected>Select a range</option>
+            <option value="under_25k">Under $25K</option>
+            <option value="25k_100k">$25K – $100K</option>
+            <option value="100k_250k">$100K – $250K</option>
+            <option value="250k_500k">$250K – $500K</option>
+            <option value="500k_plus">$500K+</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label>Have you previously invested in e-commerce, retail tech, or creator economy? <span class="required">*</span></label>
+          <select name="priorExperience" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="yes_active">Yes — I actively invest in this space</option>
+            <option value="yes_some">Yes — a few investments</option>
+            <option value="no_interested">No, but I'm exploring the space</option>
+            <option value="no">No experience in this sector</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label>What stage do you typically invest at? <span class="required">*</span></label>
+          <select name="investmentStage" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="pre_seed">Pre-seed</option>
+            <option value="seed">Seed</option>
+            <option value="series_a">Series A</option>
+            <option value="multiple">Multiple stages</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label>How did you hear about MAINish?</label>
+          <select name="referralSource">
+            <option value="" disabled selected>Select one</option>
+            <option value="referral">Referred by someone</option>
+            <option value="social">Social media</option>
+            <option value="press">Press / media coverage</option>
+            <option value="event">Industry event</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label>Anything else you'd like us to know?</label>
+          <textarea name="notes" placeholder="Questions, interests, or anything that will help us make the session more relevant to you."></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Application &rarr;</button>
+      <p class="form-note">We'll review your application and send a calendar invite with the Zoom link within 24 hours.</p>
+    </form>
+
+    <div class="success-message" id="successMessage">
+      <div class="check-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+      </div>
+      <h3>Application Received!</h3>
+      <p>Thanks for your interest. We'll review your details and get back to you within 24 hours with next steps and your Zoom invite.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 MAINish. All rights reserved. &nbsp;|&nbsp; Questions? Reach out at <a href="mailto:invest@mainish.com">invest@mainish.com</a></p>
+</footer>
+
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href="#apply"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Form submission via Formspree
+  document.getElementById('investorForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.submit-btn');
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        this.style.display = 'none';
+        document.querySelector('.form-subtitle').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+      } else {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    } catch (err) {
+      btn.textContent = 'Connection error — try again';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>
